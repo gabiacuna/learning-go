@@ -5,15 +5,12 @@ import (
 	"testing"
 )
 
-func test_sel_rand(t *testing.T) {
-	// want := int(0)
-
+func TestRand(t *testing.T) {
 	got := select_rand(3)
 
-	if got > 0 {
-		panic("select_rand(3) != 0")
-		fmt.Sprint((got))
+	if got < 3 {
+		fmt.Println("got:", got)
+		t.Logf("select_rand(3) = %d", got)
 	}
-	// println("got:", got)
 
 }
